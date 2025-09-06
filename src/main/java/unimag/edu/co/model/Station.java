@@ -35,4 +35,8 @@ public class Station {
 	@OneToMany(mappedBy = "station")
 	private Set<Vehicle> vehicles;
 	
+	private void addVehicle(Vehicle vehicle) {
+		vehicles.add(vehicle);
+		vehicle.setStation(this);;
+	}
 }
